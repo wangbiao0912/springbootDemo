@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.after00.mapper.EnterpriseInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.after00.entity.EnterpriseInfo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="add_ress" property="addRess" jdbcType="INTEGER"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">id,name,add_ress,create_time</sql>
+
+    <select id="findEnterpriseById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        SELECT * FROM enterprise WHERE id = #{id}
+    </select>
+
+    <delete id="deleteEnterPrise" parameterType="java.lang.Integer">
+        delete  from enterprise WHERE id = #{id}
+    </delete>
+    <delete id="updateEnterprise" parameterType="com.after00.entity.EnterpriseInfo">
+        update  enterprise
+         set name=#{name}
+         WHERE id = #{id}
+    </delete>
+
+    <select id="queryAllEnterprisePage" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from enterprise
+    </select>
+</mapper>
+

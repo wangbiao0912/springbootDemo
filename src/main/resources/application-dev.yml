@@ -1,0 +1,86 @@
+spring:
+  datasource:
+    #    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://127.0.0.1:3306/eladmin
+    #    url: jdbc:mysql://127.0.0.1:3306/eladmin?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    # druid 连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://192.168.101.127:3306/my_test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #连接池的设置
+    #初始化时建立物理连接的个数
+    initial-size: 5
+    #最小连接池数量
+    min-idle: 5
+    #最大连接池数量 maxIdle已经不再使用
+    max-active: 20
+    #获取连接时最大等待时间，单位毫秒
+    max-wait: 60000
+    #申请连接的时候检测，如果空闲时间大于timeBetweenEvictionRunsMillis，执行validationQuery检测连接是否有效。
+    test-while-idle: true
+    #既作为检测的间隔时间又作为testWhileIdel执行的依据
+    time-between-eviction-runs-millis: 60000
+    #销毁线程时检测当前连接的最后活动时间和当前时间差大于该值时，关闭当前连接
+    min-evictable-idle-time-millis: 30000
+    #用来检测连接是否有效的sql 必须是一个查询语句
+    #mysql中为 select 'x'
+    #oracle中为 select 1 from dual
+    validation-query: select 'x'
+    #申请连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+    test-on-borrow: false
+    #归还连接时会执行validationQuery检测连接是否有效,开启会降低性能,默认为true
+    test-on-return: false
+    #当数据库抛出不可恢复的异常时,抛弃该连接
+    #    exception-sorter: true
+    #是否缓存preparedStatement,mysql5.5+建议开启
+    pool-prepared-statements: true
+    #当值大于0时poolPreparedStatements会自动修改为true
+    max-pool-prepared-statement-per-connection-size: 20
+    #配置扩展插件
+    filters: stat,wall
+    #通过connectProperties属性来打开mergeSql功能；慢SQL记录  druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    connection-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    #合并多个DruidDataSource的监控数据
+    use-global-data-source-stat: true
+    #设置访问druid监控页的账号和密码,默认没有
+    stat-view-servlet.login-username: admin
+    stat-view-servlet.login-password: admin
+
+mybatis:
+  mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.after00.entity
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+swagger:
+  enabled: true
+
+  redis:
+    databas: 0
+    host: 192.168.101.127
+    port: 6379
+    # 连接超时时间 单位 ms（毫秒）
+    timeout: 3000
+    # password=Root1230
+    pool:
+      # 连接池中的最大空闲连接，默认值也是8。
+
+      max-idle: 8
+      #连接池中的最小空闲连接，默认值也是0。
+
+      min-idle: 0
+      # 如果赋值为-1，则表示不限制；pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+
+      max-active: 8
+
+      # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时
+      max-wait: -1
+
+
+
