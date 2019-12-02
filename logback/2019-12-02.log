@@ -27,3 +27,6 @@
 2019-12-02 14:56:48 INFO  [http-nio-9999-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 20 ms
 2019-12-02 14:56:49 INFO  [http-nio-9999-exec-1] com.after00.service.impl.EnterpriseServiceImpl : zh_CN：：：
 2019-12-02 14:57:00 INFO  [http-nio-9999-exec-2] com.after00.service.impl.EnterpriseServiceImpl : zh_CN：：：
+2019-12-02 14:59:20 INFO  [SpringContextShutdownHook] o.s.scheduling.concurrent.ThreadPoolTaskScheduler : Shutting down ExecutorService 'taskScheduler'
+2019-12-02 14:59:20 INFO  [SpringContextShutdownHook] o.s.scheduling.concurrent.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-02 14:59:20 INFO  [SpringContextShutdownHook] com.alibaba.druid.pool.DruidDataSource : {dataSource-1} closing ...
