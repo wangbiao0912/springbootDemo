@@ -1,0 +1,16 @@
+
+<
+java:S5542"#Use secure mode and padding scheme.(ÈûÇãûÿÿÿÿ
+7
+java:S5547"Use a strong cipher algorithm.(ÈûÇãûÿÿÿÿ
+R
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(Æïã¬ùÿÿÿÿ
+7
+java:S5542"#Use secure mode and padding scheme.(Ã­Èº
+2
+java:S5547"Use a strong cipher algorithm.(Ã­Èº
+R
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(àÿŠôûÿÿÿÿ
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(æÖÞœúÿÿÿÿ
+L	java:S106"9Replace this use of System.out or System.err by a logger.(ÕÔ¡
+Q	java:S106"9Replace this use of System.out or System.err by a logger.(ÐÎéþÿÿÿÿÿ

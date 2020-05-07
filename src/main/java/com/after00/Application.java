@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
+import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -22,6 +23,7 @@ import java.nio.charset.Charset;
 @EnableCaching  //开启缓存
 @EnableScheduling
 @MapperScan("com.after00.mapper")
+@EnableNeo4jRepositories
 public class Application {
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {

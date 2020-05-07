@@ -23,7 +23,7 @@ public class StartRunnerComponent implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         //查询所有的行区域
-        RedisOptionsUtils.createCached(redisTemplate, "22", "xx");
+//        RedisOptionsUtils.createCached(redisTemplate, "22", "xx");
         log.info("程序启动---执行方法");
     }
 }
