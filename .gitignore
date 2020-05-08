@@ -1,16 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
-.idea/.name
-.idea/checkstyle-idea.xml
-.idea/codeStyles/
-.idea/dbnavigator.xml
-.idea/encodings.xml
-.idea/google-java-format.xml
-.idea/inspectionProfiles/pus
-.idea/misc.xml
-.idea/sbt.xml
-.idea/vcs.xml
-.idea/workspace.xml
+.idea/
 logback/
-src/test/
+#src/test/
 target/
 set fileformat=unix
