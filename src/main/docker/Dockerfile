@@ -14,4 +14,4 @@ ADD simsunb.ttf /usr/lib/jvm/java-8-oracle/lib/fonts/simsunb.ttf
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 ENTRYPOINT ["java","-Xmx2000m","-Xms256m","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
-EXPOSE 9999。、
+EXPOSE 9999

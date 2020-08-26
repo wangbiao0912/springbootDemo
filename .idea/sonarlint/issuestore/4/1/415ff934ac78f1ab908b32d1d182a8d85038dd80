@@ -1,5 +1,22 @@
 
-J
-java:S26991"-Add at least one assertion to this test case.(ıÕ²§8ŠÏÎ .
-C
-java:S2699"-Add at least one assertion to this test case.(İü²ó
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÚËı8ùÜ¹µª.
+E
+java:S1148"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ùÜ¹µª.
+E
+java:S1148'"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ùÜ¹µª.
+E
+java:S1148B"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8ùÜ¹µª.
+c
+java:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ùÜ¹µª.
+c
+java:S2142&"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ùÜ¹µª.
+U	java:S1063"9Replace this use of System.out or System.err by a logger.(ŒíÌ¾8ùÜ¹µª.
+N
+java:S16024",Remove useless curly braces around statement(—ì¼ûÿÿÿÿ8ùÜ¹µª.
+U	java:S1065"9Replace this use of System.out or System.err by a logger.(êˆ“©8ùÜ¹µª.
+I
+java:S16028",Remove useless curly braces around statement(ãÃøó8ùÜ¹µª.
+Z	java:S1069"9Replace this use of System.out or System.err by a logger.(®¡ûÍşÿÿÿÿ8ùÜ¹µª.
+c
+java:S2142A"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8ùÜ¹µª.
+X	java:S125"<This block of commented-out lines of code should be removed.(ıì€ı8ùÜ¹µª.

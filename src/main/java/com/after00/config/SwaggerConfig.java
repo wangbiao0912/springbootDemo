@@ -1,45 +1,71 @@
 package com.after00.config;
 
-
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
-import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-@EnableSwagger2
 @Configuration
-public class SwaggerConfig {
+@EnableSwagger2
+@EnableKnife4j
+@Import(BeanValidatorPluginsConfiguration.class)
+public class SwaggerConfig extends WebMvcConfigurationSupport {
 
-
-    //是否开启swagger，正式环境一般是需要关闭的，可根据springboot的多环境配置进行设置
-    @Value(value = "${swagger.enabled}")
-    Boolean swaggerEnabled;
+    @Value("${swagger2.enable:true}")
+    private boolean swagger2Enable;
 
     @Bean
     public Docket createRestApi() {
-        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())
-                // 是否开启
-                .enable(swaggerEnabled).select()
-                // 扫描的路径包
-                .apis(RequestHandlerSelectors.basePackage("com.after00.controller"))
-                // 指定路径处理PathSelectors.any()代表所有的路径
-                .paths(PathSelectors.any()).build().pathMapping("/");
+        return new Docket(DocumentationType.SWAGGER_2)
+            .apiInfo(apiInfo())
+            .enable(swagger2Enable)
+//            .groupName("2.X版本")
+            .select()
+            .apis(RequestHandlerSelectors.basePackage("com.after00.controller"))
+            .paths(PathSelectors.any())
+            .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("mq服务端接口")
-                .description("mq")
-                // 作者信息
-                .contact(new Contact("wangbiao", "http://after00.org", "wangbiao9012@gmail.com"))
-                .version("1.0.0")
-                .build();
+            .title("fund管理 文档")
+//                .description("基金管理接口")
+//                .termsOfServiceUrl("http://www.google.com")
+            .version("1.0.0")
+            .build();
+    }
+
+
+    /**
+     * 防止@EnableMvc把默认的静态资源路径覆盖了，手动设置的方式
+     *
+     * @param registry
+     */
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // 解决静态资源无法访问
+        registry.addResourceHandler("/**").addResourceLocations("classpath:/static/");
+//        // 解决swagger无法访问
+//        registry.addResourceHandler("/swagger-ui.html")
+//            .addResourceLocations("classpath:/META-INF/resources/");
+//        // 解决swagger的js文件无法访问
+//        registry.addResourceHandler("/webjars/**")
+//            .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+        registry.addResourceHandler("doc.html")
+            .addResourceLocations("classpath:/META-INF/resources/");
+        registry.addResourceHandler("/webjars/**")
+            .addResourceLocations("classpath:/META-INF/resources/webjars/");
     }
 }

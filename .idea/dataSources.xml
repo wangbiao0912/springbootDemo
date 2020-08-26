@@ -8,5 +8,12 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="39.104.172.5" uuid="1130e8cd-9a64-488e-94f1-cc3345b15a75">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>39.104.172.5</remarks>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://39.104.172.5:3306</jdbc-url>
+    </data-source>
   </component>
 </project>

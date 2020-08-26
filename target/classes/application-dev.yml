@@ -1,9 +1,11 @@
 spring:
-  data:
-    neo4j:
-      uri: bolt://172.16.40.134:7687
-      username: neo4j
-      password: 123456
+#  data:
+#    neo4j:
+#      uri: bolt://172.16.40.134:7687
+#      username: neo4j
+#      password: 123456
+
+
 #  data：
 #      neo4j:
 #          # leader:ip1 follower:ip2 ,ip3
@@ -17,7 +19,7 @@ spring:
     #    url: jdbc:mysql://127.0.0.1:3306/eladmin?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
     # druid 连接池
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://127.0.0.1:3306/my_test?useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true
+    url: jdbc:mysql://39.104.172.5:3306/fund?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -75,7 +77,7 @@ swagger:
 
   redis:
     databas: 0
-    host: 192.168.101.127
+    host: 39.104.172.5
     port: 6379
     # 连接超时时间 单位 ms（毫秒）
     timeout: 3000
