@@ -32,7 +32,7 @@ public class FundServiceImpl implements FundService {
   String url = "http://fundgz.1234567.com.cn/js/{code}.js";
 
   @Override
-  public BaseResponse getTodayEarningsByUserId(String userId) {
+  public BaseResponse getTodayEarningsByUserId(Integer userId) {
     BigDecimal sumMoney = new BigDecimal(0);
     BigDecimal sumEarnings = new BigDecimal(0);
 
@@ -90,5 +90,35 @@ public class FundServiceImpl implements FundService {
       }
     }
     return BaseResponse.getSuccessResponse(list, "总共收益：" + sumEarnings+"  总投资："+sumMoney);
+  }
+
+  @Override
+  public BaseResponse addFundByCode(String fundCode, BigDecimal money, Integer userId) {
+    //份数
+    BigDecimal copies=new BigDecimal(0);
+    FundList fundList=fundListMapper.selectByCodeAndUserId(userId,fundCode);
+    String tempUrl = url.replace("{code}", fundCode);
+    try {
+      ResponseEntity<String> responseEntity = restTemplate.getForEntity(tempUrl, String.class);
+      log.info("code:{},id={},返回状态：{},返回数据：{}", fundCode, fundList.getId(), responseEntity.getStatusCode(), responseEntity.getBody());
+      String body = responseEntity.getBody().replace("jsonpgz(", "").replace(");", "");
+      FundRequestFundgz fundRequestFundgz = JSON.toJavaObject(JSON.parseObject(body), FundRequestFundgz.class);
+      BigDecimal gszzl=fundRequestFundgz.getGszzl();
+      copies=money.divide(gszzl);
+    }catch (Exception e){
+      e.printStackTrace();
+      log.error("查询报错，{}",e.getMessage());
+      return BaseResponse.getParamsFailedResponse(e.getMessage());
+    }
+    if (fundList==null){
+      //直接插入数据，
+      fundList=FundList.builder().fundCode(fundCode).createName(userId).fundShare(copies).build();
+      fundListMapper.insertSelective(fundList);
+    }else {
+      //查询数据的最后估值
+      fundList.setFundShare(fundList.getFundShare().add(copies));
+      fundListMapper.updateByPrimaryKey(fundList);
+    }
+    return BaseResponse.getSuccessResponse("","操作成功了!");
   }
 }

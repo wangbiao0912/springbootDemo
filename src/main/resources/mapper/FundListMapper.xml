@@ -356,5 +356,15 @@
 
 
   </select>
+  <select id="selectByCodeAndUserId" resultMap="BaseResultMap">
+
+     select
+    <include refid="Base_Column_List"/>
+    from fund_list
+    where create_name = #{userId}
+    and fund_code=#{fundCode}
+
+
+  </select>
 </mapper>
 

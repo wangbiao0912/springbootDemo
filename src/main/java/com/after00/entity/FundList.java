@@ -3,6 +3,7 @@ package com.after00.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class FundList {
   private Integer id;
 

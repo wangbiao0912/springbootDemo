@@ -6,3 +6,4 @@ logback/
 target/
 /target/
 set fileformat=unix
+src/test/java/com/after00/

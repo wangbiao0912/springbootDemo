@@ -9,7 +9,7 @@ spring:
 #  data：
 #      neo4j:
 #          # leader:ip1 follower:ip2 ,ip3
-#          uri: bolt://ip1:7687
+#          uri: bolt://ip1:7687王彪
 #          uris: bolt://ip2:7687,bolt://ip3:7687
 #          username: neo4j
 #          password：pro
@@ -19,7 +19,7 @@ spring:
     #    url: jdbc:mysql://127.0.0.1:3306/eladmin?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
     # druid 连接池
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://39.104.:3306/fund?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true
+    url: jdbc:mysql://39.104.172.5:3306/fund?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&autoReconnect=true
     username: root
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver

@@ -4,6 +4,7 @@ import com.after00.common.BaseResponse;
 import com.after00.service.FundService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import java.math.BigDecimal;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,13 +28,19 @@ public class FundController {
 
     final FundService fundService;
     /**
-     * 查询收益明细
+     * 查询明细
      */
-    @ApiOperation(value = "获取今日收益", response = BaseResponse.class)
+    @ApiOperation(value = "获取今日", response = BaseResponse.class)
     @GetMapping("/getTodayEarningsById")
-    public BaseResponse getTodayEarningsByUserId(@RequestParam(name = "userId") String userId) {
+    public BaseResponse getTodayEarningsByUserId(@RequestParam(name = "userId") Integer userId) {
        return fundService.getTodayEarningsByUserId(userId);
     }
 
+
+    @ApiOperation(value = "添加数据", response = BaseResponse.class)
+    @GetMapping("/addFundByCode")
+    public BaseResponse addFundByCode(@RequestParam(name = "code") String code, @RequestParam(name = "money")BigDecimal money,@RequestParam(name = "userId") Integer userId) {
+        return fundService.addFundByCode(code,money,userId);
+    }
 
 }

@@ -20,5 +20,7 @@ public interface FundListMapper {
   int updateByPrimaryKey(FundList record);
 
 
-  List<FundList> getTodayEarningsByUserId(@Param("userId") String userId);
+  List<FundList> getTodayEarningsByUserId(@Param("userId") Integer userId);
+
+  FundList selectByCodeAndUserId(@Param("userId") Integer userId, @Param("fundCode") String fundCode);
 }

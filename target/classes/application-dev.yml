@@ -9,7 +9,7 @@ spring:
 #  data：
 #      neo4j:
 #          # leader:ip1 follower:ip2 ,ip3
-#          uri: bolt://ip1:7687
+#          uri: bolt://ip1:7687王彪
 #          uris: bolt://ip2:7687,bolt://ip3:7687
 #          username: neo4j
 #          password：pro
