@@ -46,6 +46,7 @@ public class SecurityAspect {
             rvt = proceedingJoinPoint.proceed();
         } catch (Exception e) {
             rvt = BaseResponse.getFailResponse(500, "", "服务端问题，请联系管理员");
+
             e.printStackTrace();
             System.out.println("-----------------------------------   service continue -------------------------------");
             return rvt;

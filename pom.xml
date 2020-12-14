@@ -234,17 +234,111 @@
       </dependency>
 
 
-      <dependency>
-        <groupId>com.aliyun</groupId>
-        <artifactId>aliyun-java-sdk-core</artifactId>
-        <version>4.5.14</version>
-      </dependency>
-      <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-imageaudit -->
-      <dependency>
-        <groupId>com.aliyun</groupId>
-        <artifactId>aliyun-java-sdk-imageaudit</artifactId>
-        <version>1.0.8</version>
-      </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-ecs</artifactId>
+            <version>4.17.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-core</artifactId>
+            <version>4.5.14</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.74</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>ocr20191230</artifactId>
+            <version>0.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>facebody20191230</artifactId>
+            <version>0.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>imagerecog20190930</artifactId>
+            <version>0.0.4</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>imageseg20191230</artifactId>
+            <version>0.2.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>imageenhan20190930</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>goodstech20191230</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.aliyun</groupId>-->
+<!--            <artifactId>objectdet20191230</artifactId>-->
+<!--            <version>0.0.3</version>-->
+<!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-ocr -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-ocr</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>imgsearch20200320</artifactId>
+            <version>0.2.5</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>videorecog20200320</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>videoseg20200320</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>videoenhan20200320</artifactId>
+            <version>0.0.3</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-imagerecog -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-imagerecog</artifactId>
+            <version>1.0.9</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-imageaudit -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-imageaudit</artifactId>
+            <version>1.0.8</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-imageprocess -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-imageprocess</artifactId>
+            <version>1.0.8</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-objectdet -->
+        <dependency>
+            <groupId>com.aliyun</groupId>
+            <artifactId>aliyun-java-sdk-objectdet</artifactId>
+            <version>1.0.9</version>
+        </dependency>
 
     </dependencies>
 
