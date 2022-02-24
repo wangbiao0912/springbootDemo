@@ -37,7 +37,7 @@ public class EnterpriseController {
         return enterpriseInfo;
     }
 
-    private void checkDTOParams(BindingResult bindingResult) {
+    private void checkDTOParams( BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             // return  OrderResponse.getFailResponse(orderPaymentManagementParam.getTransid(),orderPaymentManagementParam.getOrderno(),bindingResult.getFieldError().getDefaultMessage());
             //throw new 带验证码的验证错误异常
